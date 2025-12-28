@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Health check endpoint (keeps free tier awake)
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // Instagram scraper endpoint
 app.post('/api/scrape', async (req, res) => {
   let browser = null;
