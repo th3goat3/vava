@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profile Scraper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📷 Instagram Profile Scraper</h1>
+            <p class="subtitle">Enter an Instagram username to get profile information</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <form id="scrapeForm">
+                    <div class="input-group">
+                        <span class="instagram-icon">@</span>
+                        <input 
+                            type="text" 
+                            id="usernameInput" 
+                            placeholder="Enter Instagram username"
+                            required
+                            autocomplete="off"
+                        >
+                        <button type="submit" id="scrapeBtn">
+                            <span class="btn-text">Scrape</span>
+                            <span class="btn-loader" style="display: none;">⏳</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            <div id="results" class="results" style="display: none;">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <img id="profilePicture" src="" alt="Profile Picture" class="profile-picture">
+                        <h2 id="profileUsername" class="profile-username"></h2>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Followers</span>
+                            <span id="followersCount" class="stat-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Simple Instagram Profile Scraper</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
